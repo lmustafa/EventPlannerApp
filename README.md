@@ -1,8 +1,7 @@
-run the application by writing: ./gradlew run
+Run the application by writing: ./gradlew run
 
-There are two main methods, one that shows the capabilities of the user (in Main),
-and one that shows the capabilities of a data provider (in InstructorMain).
-
+For the initial build, both user & instructor capabilities are performed from Main. These
+will be split eventually.
 
 User stories that are implemented:
 - (1) A user gets data from an API
@@ -35,14 +34,14 @@ When the user selects the appropriate option
 
 Then an event object is created that stores the information and adds it to the list
 
-Single Responsibility Principle:
+How Single Responsibility Principle is used:
 Each class is responsible for its own implementation. 
 For example, the Event class is just a class of Events which can be instantiated
 every time data is retrieved or the user wants to add an event. TicketMaster implements
 Data, this ensures that everything a class that needs to retrieve data is done. The compiler will
 throw an error if I forget to implement an important method. 
 
-Open-Close Principle:
+How Open-Close Principle is used:
 The Event object is wrapped in an EventWrapper class which handles how the data is stored.
 The current implementation is as a linked list but it could be changed into a HashMap or an ArrayList and
 I would need to change the EventWrapper class only - this will be more useful when I have data from different 
